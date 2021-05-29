@@ -56,7 +56,7 @@ class _MealWidgetsState extends State<MealWidgets> {
         ).toList(),
       );
   void swipeFunction(DragEndDetails dragEndDetails){
-    final selectedIndex = Meal.values.indexOf(selectedMeal); // راح نخزن في المتغير هذا المستوى المحدد حاليا من المتغير selectedtype
+    final selectedIndex = Meal.values.indexOf(selectedMeal);
     final hasNext = selectedIndex < Meal.values.length;
     final hasPrevious = selectedIndex > 0;
     setState(() {
@@ -75,12 +75,12 @@ class _MealWidgetsState extends State<MealWidgets> {
   }
   Widget buildMeals()=>
       GestureDetector(
-        onHorizontalDragEnd: swipeFunction, // لما تضغط على اليوم وتلف ع اليسار مثلا يمديك تروح للمستوى الي جمبه
+        onHorizontalDragEnd: swipeFunction,
         child: Column(
           children:mealsList.where((element) => element.mealType==selectedMeal).map((mealsList) =>
               Container(
-                  margin: const EdgeInsets.symmetric(vertical: 10), // تسوي مسافة بين الأيام
-                  child: MealSetWidgets(mealSet: mealsList,))) // راح تعرض كل الأيام
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  child: MealSetWidgets(mealSet: mealsList,)))
               .toList(),
 
         ),

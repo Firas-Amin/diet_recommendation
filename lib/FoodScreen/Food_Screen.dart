@@ -11,9 +11,8 @@ class FoodScreen extends StatefulWidget {
 class _FoodScreenState extends State<FoodScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Food(),
-
+    return MaterialApp(
+      home: Food(),
     );
   }
 }
@@ -54,7 +53,7 @@ class FoodAppBar extends StatelessWidget {
       expandedHeight: expandedH,
       flexibleSpace:FlexibleSpaceBar(
         title: Text(title, style: TextStyle(color:Color(0xFF212121)),),
-        background: Image.asset('Images/$image', fit: BoxFit.cover,),
+        background: Image.asset('meals/$image', fit: BoxFit.cover,),
       ) ,
     );
   }
